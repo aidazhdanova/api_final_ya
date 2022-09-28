@@ -6,7 +6,8 @@ from rest_framework import mixins
 from rest_framework import filters
 
 from .permissions import AuthorOrReadOnly
-from .serializers import CommentSerializer, FollowSerializer, GroupSerializer, PostSerializer
+from .serializers import (CommentSerializer, FollowSerializer,
+                          GroupSerializer, PostSerializer)
 from posts.models import Group, Post
 
 
@@ -35,7 +36,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = [AuthorOrReadOnly,]
+    permission_classes = [AuthorOrReadOnly]
 
     def get_post(self):
         return get_object_or_404(Post, id=self.kwargs.get('post_id'))
@@ -49,8 +50,8 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 class FollowViewSet(ListCreateViewSet):
     serializer_class = FollowSerializer
-    permission_classes = (IsAuthenticated,)
-    filter_backends = (filters.SearchFilter,)
+    permission_classes = [IsAuthenticated]
+    filter_backends = [filters.SearchFilter]
     search_fields = ('following__username',)
 
     def get_queryset(self):
