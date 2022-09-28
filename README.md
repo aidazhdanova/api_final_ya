@@ -11,7 +11,7 @@ API для социальной сети Yatube, в которой пользо�
 Запустить проект можно следующим образом:
 ----------
 
-1. Клонировать репозиторий и перейти в него в командной строке:
+1. Клонировать репозиторий и перейти в него:
 ```bash
 git clone https://github.com/aidazhdanova/api_final_yatube.git
 cd api_final_yatube
@@ -21,7 +21,7 @@ cd api_final_yatube
 python -m venv venv
 source venv/Scripts/activate
 ```
-3. Установить зависимости из файла ```requirements.txt```:
+3. Установить зависимости ```requirements.txt```:
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -32,7 +32,7 @@ python manage.py migrate
 ```
 5. Запустить проект:
 ```bash
-python3 manage.py runserver
+python manage.py runserver
 ```
 ----------
 Документация доступна по адресу ```/redoc/```.
