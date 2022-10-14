@@ -13,7 +13,7 @@ API для социальной сети Yatube, в которой пользо�
 
 1. Клонировать репозиторий и перейти в него:
 ```bash
-git clone https://github.com/aidazhdanova/api_final_yatube.git
+git clone https://github.com/aidazhdanova/api_final_ya.git
 cd api_final_yatube
 ```
 2. Cоздать и активировать виртуальное окружение:
